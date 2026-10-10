@@ -28,5 +28,13 @@ class TestCore(unittest.TestCase):
         else:
             print("Review missed cards with mixed results test: Failed")
 
+        #Test nothing missed case: all correct
+        all_correct_results = [True, True, True]
+
+        if core.review_missed(cards, all_correct_results) == []:
+            print("Review missed cards with mixed results test: Passed!")
+        else:
+            print("Review missed cards with mixed results test: Failed")
+
 if __name__ == "__main__":
     unittest.main()
