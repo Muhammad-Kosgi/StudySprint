@@ -53,3 +53,19 @@ def percent_correct(score, total):
     if total == 0:
         return 0
     return round(100 * score / total)
+
+def review_missed(cards, results):
+    """
+    Returns a list of cards that were answered incorrectly from last
+    quiz (when results == False)
+    """
+    missed_cards = []
+
+    #Loop through all card numbers
+    for i in range(len(cards)):
+        #Check if current card number was answered incorrectly
+        if results[i] == False:
+            missed_cards.append(cards[i])
+
+    #Return list(will still work if nothing was missed)
+    return missed_cards
