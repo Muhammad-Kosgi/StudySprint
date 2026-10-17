@@ -38,6 +38,9 @@ def cards_by_category(cards, category):
 
 
 def count_by_category(cards):
+    """
+    Return the number of cards in each category
+    """
     counts = {}
     for card in cards:
         name = card["category"]
