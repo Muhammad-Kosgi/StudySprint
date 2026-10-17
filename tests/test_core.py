@@ -17,6 +17,26 @@ class TestCore(unittest.TestCase):
         self.assertEqual(card["id"], 2)
         self.assertEqual(len(data["cards"]), 2)
 
+    def test_review_missed(self):
+        cards = ["Card A", "Card B", "Card C"]
+
+        #Test mixed case: some incorrect, some correct
+        mixed_results = [True, False, True]
+
+        self.assertEqual(
+            core.review_missed(cards, mixed_results),
+            ["Card B"],
+            "Review missed cards with mixed results test failed"
+        )
+
+        #Test nothing missed case: all correct
+        all_correct_results = [True, True, True]
+
+        self.assertEqual(
+            core.review_missed(cards, all_correct_results),
+            [],
+            "Review missed cards with all correct results test failed"
+        )
 
 if __name__ == "__main__":
     unittest.main()
