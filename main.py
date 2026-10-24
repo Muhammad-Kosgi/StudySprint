@@ -33,6 +33,10 @@ def main():
             print("See you next session!")
             break
         elif choice == "1":
+            """
+            Expected Output: You scored 1/8 (14%)
+            Actual Output: You scored 8/8 (114%)
+            """
             cards = core.get_cards(data)
             score = core.run_quiz(cards)
             total = len(cards)
