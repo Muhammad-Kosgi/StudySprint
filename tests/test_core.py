@@ -4,6 +4,8 @@ import unittest
 
 from features import core
 
+from features import reports
+
 
 class TestCore(unittest.TestCase):
     def test_check_answer_is_case_insensitive(self):
@@ -16,6 +18,12 @@ class TestCore(unittest.TestCase):
         card = core.add_card(data, "New question?", "yes")
         self.assertEqual(card["id"], 2)
         self.assertEqual(len(data["cards"]), 2)
+
+    def test_empty_average_score(self):
+        self.assertEqual(reports.average_score({"history": [0]}), 0.0)
+
+    def test_sample_average_score(self):
+        self.assertEqual(reports.average_score({"history": [5,6,4]}), 5.0)
 
 
 if __name__ == "__main__":
