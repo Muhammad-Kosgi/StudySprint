@@ -38,3 +38,8 @@ python -m unittest
 Pick a ticket from the `tickets/` folder (or the Issues tab once your section
 repo exists). Read `CONTRIBUTING.md` for the Definition of Done every pull
 request has to meet.
+Ticket #1:
+What changed: Now, there is a new function called review_missed that checks through a list of True or False booleans that represent the incorrect or correct cards from the latest quiz. It returns all of the cards that were missed. There are 2 tests to make sure that it properly runs in the case that the results are mixed with incorrect and correct, and still runs properly in the case that the results are all correct.
+
+Ticket #2:
+What changed: After this ticket, the function category_reports is now fully finished and successfully operates according to its intended function. When it runs, it looks through the entire sample of cards it was referred to when the function was called, and returns a list of all the categories present in the card bank it was given and how many cards are in each category. Unit tests were made and they output OK.
