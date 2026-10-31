@@ -10,7 +10,14 @@ def deck_summary(data):
 
 
 def category_report(data):
-    # TODO(ticket): tally each card into a {category: count} dict and return it.
-    # For now this returns an empty report so the menu never crashes.
     report = {}
+    
+    cards = data.get("cards", [])
+    
+    for card in cards:
+        category = card.get("category")
+        if category:
+            # Increase count if it exists, or create count for that category
+            report[category] = report.get(category, 0) + 1
+            
     return report
