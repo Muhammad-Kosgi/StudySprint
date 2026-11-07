@@ -16,3 +16,9 @@ release goes first. Keep each entry to what a user would notice.
 ```
 
 <!-- Your first real release note goes below this line. -->
+## v1.0: - 2026-11-07
+Added:
+-Review missed cards function: The user can now execute this function to receive a list of the cards which they got incorrect from the most recent card review (Ticket #1)
+-Category breakdown report: The user can now execute this function in order to obtain a list that displays all of the categories of cards in the current deck and how many cards are in each category (Ticket #9)
+Fixed:
+-After taking the quiz it would output an incorrect summary of how many you got correct
