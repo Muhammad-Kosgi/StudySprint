@@ -2,7 +2,7 @@
 
 import unittest
 
-from features import core
+from features import core, reports
 
 
 class TestCore(unittest.TestCase):
@@ -37,6 +37,38 @@ class TestCore(unittest.TestCase):
             [],
             "Review missed cards with all correct results test failed"
         )
+
+    def test_category_reports(self):
+        #Sample card bank with different categories
+        sample_mixed = {
+            "cards" : [
+                {"category": "syntax"},
+                {"category": "lists"},
+                {"category": "lists"},
+                {"category": "syntax"},
+                {"category": "types"},
+                {"category": "syntax"}
+            ]
+        }
+
+        self.assertEqual(
+            reports.category_report(sample_mixed), {'syntax': 3, 'lists': 2, 'types': 1}
+        )
+
+        #Sample card bank with no categories
+        sample_none = {
+            "cards" : [
+                {"question" : "Q1"},
+                {"question" : "Q2"}
+            ]
+        }
+
+        self.assertEqual(
+            reports.category_report(sample_none), {}
+        )
+
+
+
 
 if __name__ == "__main__":
     unittest.main()
