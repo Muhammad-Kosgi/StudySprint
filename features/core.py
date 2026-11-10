@@ -10,6 +10,7 @@ def check_answer(card, guess):
 
 
 def run_quiz(cards, ask=input, show=print):
+    global incorrect_cards
     score = 0
     total = len(cards)
     incorrect_cards = []
@@ -20,7 +21,7 @@ def run_quiz(cards, ask=input, show=print):
             score += 1
         else:
             show("Not quite. The answer was: " + card["answer"])
-            incorrect_cards.append(card["question"])
+            incorrect_cards.append(card)
     return score
 
 

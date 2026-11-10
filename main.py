@@ -59,7 +59,14 @@ def main():
         elif choice == "7":
             print(reports.deck_summary(data))
         elif choice == "8":
-            review_missed()
+            if core.incorrect_cards:
+                print("\n--- Missed Questions Review ---")
+                for i, card in enumerate(core.incorrect_cards, 1):
+                    print(f"{i}. Question: {card["question"]}")
+                    print(f"Correct Answer: {card["answer"]}")
+                    print(f"Category: {card.get("category", "general")}")
+            else:
+                print("No missed cards!")
         else:
             print("Please pick a number from the menu.")
 
